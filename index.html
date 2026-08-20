@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malviora | Antivirus Gratuito para Android</title>
+    <meta name="description" content="Malviora es un antivirus gratuito para Android que analiza, detecta riesgos y protege tu móvil de forma clara y sencilla.">
+    <link rel="canonical" href="https://MaxStudiotoken.github.io/malviora-antivirus/">
+    
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0e14;
+            color: #e0e0e0;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(145deg, #0f1a1a 0%, #1a2a2a 50%, #0b1212 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid #00ff88;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00ff88, #00cc66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .hero .sub {
+            font-size: 1.3em;
+            color: #88aacc;
+            margin-top: 10px;
+        }
+
+        .hero .badge-hero {
+            display: inline-block;
+            margin-top: 20px;
+            background: rgba(0, 255, 136, 0.15);
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+
+        /* ===== SECCIÓN DESCRIPCIÓN ===== */
+        .section-title {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin: 50px 0 25px 0;
+            color: #ffffff;
+            border-left: 5px solid #00ff88;
+            padding-left: 20px;
+        }
+
+        .desc-box {
+            background: #121a1f;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #1e2d34;
+            margin-bottom: 30px;
+        }
+
+        .desc-box p {
+            font-size: 1.1rem;
+            color: #bcccd9;
+            margin-bottom: 15px;
+        }
+
+        .desc-box ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .desc-box ul li {
+            background: #0f171c;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border-left: 3px solid #00ff88;
+            color: #d0dde8;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .desc-box ul { grid-template-columns: 1fr; }
+        }
+
+        /* ===== ARENA DE VIRUS (EL JUEGO) ===== */
+        .game-section {
+            background: #0c1419;
+            border: 2px solid #00ff88;
+            border-radius: 30px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.05);
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .game-header h2 {
+            color: #00ff88;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .score-box {
+            background: #1a2a2a;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid #00ff88;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .score-box span {
+            color: #00ff88;
+            font-size: 1.5em;
+        }
+
+        #virus-arena {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: #0a1115;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: crosshair;
+            border: 1px solid #1e2d34;
+            user-select: none;
+        }
+
+        .virus {
+            position: absolute;
+            font-size: 48px;
+            cursor: pointer;
+            transition: transform 0.08s ease;
+            line-height: 1;
+            pointer-events: auto;
+            z-index: 10;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.4));
+        }
+
+        .virus:hover {
+            transform: scale(1.2);
+        }
+
+        /* Efecto al aplastar (lo añade JS) */
+        .virus.squished {
+            animation: squishAnim 0.3s forwards !important;
+        }
+
+        @keyframes squishAnim {
+            0% { transform: scale(1.2); opacity: 1; }
+            30% { transform: scale(1.8) rotate(20deg); background: rgba(255, 0, 0, 0.8); border-radius: 50%; }
+            100% { transform: scale(0) rotate(40deg); opacity: 0; }
+        }
+
+        /* Partícula de explosión */
+        .splash {
+            position: absolute;
+            pointer-events: none;
+            font-size: 30px;
+            animation: splashAnim 0.6s forwards;
+            z-index: 20;
+        }
+
+        @keyframes splashAnim {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(2) translateY(-50px); opacity: 0; }
+        }
+
+        /* Mensaje de instrucción */
+        .game-tip {
+            text-align: center;
+            margin-top: 15px;
+            color: #668899;
+            font-size: 0.95rem;
+        }
+
+        .game-tip strong {
+            color: #00ff88;
+        }
+
+        /* ===== BOTÓN DESCARGA ===== */
+        .download-btn {
+            display: inline-block;
+            background: #00ff88;
+            color: #0b0e14;
+            font-weight: 800;
+            padding: 18px 50px;
+            border-radius: 60px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            margin: 30px 0;
+            transition: all 0.3s;
+            border: 2px solid #00ff88;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .download-btn:hover {
+            background: transparent;
+            color: #00ff88;
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(0, 255, 136, 0.4);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            margin-top: 70px;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid #1e2d34;
+            color: #556677;
+        }
+
+        footer a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8em; }
+            .game-header { flex-direction: column; align-items: start; gap: 10px; }
+            #virus-arena { height: 300px; }
+            .virus { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+        <h1>🛡️ Malviora</h1>
+        <p class="sub">Antivirus Gratuito para Android</p>
+        <div class="badge-hero">🔒 Protección sin complicaciones</div>
+    </section>
+
+    <div class="container">
+
+        <!-- ====== DESCRIPCIÓN ====== -->
+        <h2 class="section-title">📋 ¿Qué es Malviora?</h2>
+        <div class="desc-box">
+            <p>
+                <strong>Malviora</strong> es una app de seguridad para Android pensada para ayudarte a proteger tu dispositivo de forma clara, rápida y sencilla.
+            </p>
+            <p>
+                La aplicación reúne funciones de <strong>análisis, supervisión y protección</strong> para que puedas revisar el estado de tu móvil, detectar posibles riesgos y mejorar tu seguridad diaria desde una sola interfaz.
+            </p>
+            <p><strong>Con Malviora puedes:</strong></p>
+            <ul>
+                <li>🔍 Analizar el estado general de seguridad del dispositivo</li>
+                <li>⚠️ Detectar posibles riesgos o comportamientos sospechosos</li>
+                <li>🛡️ Mejorar el control sobre la protección de tu móvil</li>
+                <li>📊 Revisar información útil del sistema y del funcionamiento de la app</li>
+                <li>✨ Disfrutar de una experiencia simple, rápida y fácil de usar</li>
+            </ul>
+            <p style="margin-top: 20px;">
+                Malviora está diseñada para ofrecer una experiencia moderna y accesible, tanto para usuarios que quieren revisar su móvil de forma básica como para quienes desean tener más control sobre la seguridad de su dispositivo.
+            </p>
+            <p style="color: #00ff88; font-weight: 700; font-size: 1.2rem;">
+                Nuestro objetivo es que la seguridad sea más visual, más cómoda y más fácil de entender.
+            </p>
+            <p style="border-top: 1px solid #1e2d34; padding-top: 20px; margin-top: 20px;">
+                <strong>Malviora - Antivirus Android</strong> te ayuda a mantener tu dispositivo más controlado, más protegido y mejor preparado frente a riesgos comunes.
+            </p>
+        </div>
+
+        <!-- ====== MINIJUEGO: CAZA VIRUS ====== -->
+        <div class="game-section">
+            <div class="game-header">
+                <h2>🎯 Modo Caza Virus</h2>
+                <div class="score-box">🧹 Eliminados: <span id="scoreCounter">0</span></div>
+            </div>
+
+            <div id="virus-arena">
+                <!-- Los virus se crean aquí con JavaScript -->
+            </div>
+            <p class="game-tip">
+                💡 Haz clic en los <strong>virus (🦠)</strong> para aplastarlos y proteger tu dispositivo. 
+                ¡Cuantos más caces, más seguro estarás!
+            </p>
+        </div>
+
+        <!-- ====== BOTÓN DE DESCARGA ====== -->
+        <div class="center">
+            <a href="https://play.google.com/store/apps/details?id=vargas.maximo.malviora" target="_blank" class="download-btn">
+                📲 Descargar Malviora en Google Play
+            </a>
+        </div>
+
+        <!-- ====== CITA ====== -->
+        <div style="margin-top: 40px; padding: 20px; background: #0f171c; border-radius: 15px; border-left: 5px solid #00ff88;">
+            <p style="font-style: italic; color: #b0c4d0;">
+                "La seguridad no debería ser un lujo. Por eso Malviora es totalmente gratuita y fácil de usar para todos."
+            </p>
+        </div>
+
+    </div>
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <div class="container">
+            <p>© 2026 <strong style="color:#00ff88;">Malviora</strong> · Antivirus para Android</p>
+            <p style="margin-top: 8px; font-size: 0.9rem;">
+                Hecho con ❤️ por <a href="https://MaxStudiotoken.github.io/maxstudio/">MaxStudio</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ====== JAVASCRIPT: ANIMACIÓN DE VIRUS ====== -->
+    <script>
+        (function() {
+            const arena = document.getElementById('virus-arena');
+            const scoreSpan = document.getElementById('scoreCounter');
+            let score = 0;
+            let virusArray = [];
+            let animationId = null;
+            const VIRUS_COUNT = 12; // Número de virus caminando
+
+            // Emojis de virus
+            const virusEmojis = ['🦠', '🧫', '☣️', '🦟', '🧬'];
+
+            // Crear un virus
+            function createVirus() {
+                const el = document.createElement('div');
+                el.className = 'virus';
+                el.textContent = virusEmojis[Math.floor(Math.random() * virusEmojis.length)];
+                
+                const size = 40 + Math.random() * 30; // 40-70px
+                const x = Math.random() * (arena.clientWidth - size);
+                const y = Math.random() * (arena.clientHeight - size);
+                const dx = (Math.random() - 0.5) * 4; // velocidad X
+                const dy = (Math.random() - 0.5) * 4; // velocidad Y
+
+                el.style.fontSize = size + 'px';
+                el.style.left = x + 'px';
+                el.style.top = y + 'px';
+                el.style.width = size + 'px';
+                el.style.height = size + 'px';
+                el.style.display = 'flex';
+                el.style.alignItems = 'center';
+                el.style.justifyContent = 'center';
+
+                arena.appendChild(el);
+
+                // Evento de clic para aplastar
+                el.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    squishVirus(el);
+                });
+
+                return {
+                    el: el,
+                    x: x,
+                    y: y,
+                    dx: dx,
+                    dy: dy,
+                    size: size,
+                    alive: true
+                };
+            }
+
+            // Función para aplastar virus
+            function squishVirus(el) {
+                if (el.classList.contains('squished')) return; // Ya aplastado
+
+                // Añadir clase de aplastado
+                el.classList.add('squished');
+
+                // Crear efecto de explosión (splash)
+                const rect = el.getBoundingClientRect();
+                const arenaRect = arena.getBoundingClientRect();
+                const centerX = rect.left - arenaRect.left + rect.width / 2;
+                const centerY = rect.top - arenaRect.top + rect.height / 2;
+
+                const splash = document.createElement('div');
+                splash.className = 'splash';
+                splash.textContent = '💥';
+                splash.style.left = (centerX - 20) + 'px';
+                splash.style.top = (centerY - 20) + 'px';
+                splash.style.fontSize = '40px';
+                arena.appendChild(splash);
+
+                // Eliminar el splash después de la animación
+                setTimeout(() => {
+                    splash.remove();
+                }, 700);
+
+                // Incrementar puntuación
+                score++;
+                scoreSpan.textContent = score;
+
+                // Eliminar el virus del DOM y del array después de la animación
+                setTimeout(() => {
+                    if (el.parentNode) {
+                        el.remove();
+                    }
+                    // Reemplazar con un virus nuevo para mantener la dificultad
+                    spawnNewVirus();
+                }, 350);
+            }
+
+            // Spawnear un virus nuevo
+            function spawnNewVirus() {
+                const newV = createVirus();
+                // Reemplazar en el array el que murió (buscar un slot muerto)
+                // Como es más fácil, lo añadimos y si hay muchos, quitamos los muertos.
+                virusArray.push(newV);
+                // Limpiar virus muertos del array (los que no tienen elemento padre o están squished)
+                virusArray = virusArray.filter(v => v.el.parentNode !== null && !v.el.classList.contains('squished'));
+            }
+
+            // Mover virus (física de rebote)
+            function moveViruses() {
+                const arenaW = arena.clientWidth;
+                const arenaH = arena.clientHeight;
+
+                virusArray.forEach(v => {
+                    if (!v.el || v.el.classList.contains('squished')) return;
+
+                    v.x += v.dx;
+                    v.y += v.dy;
+
+                    // Rebote en bordes
+                    if (v.x <= 0 || v.x + v.size >= arenaW) {
+                        v.dx *= -1;
+                        v.x = Math.max(0, Math.min(v.x, arenaW - v.size));
+                    }
+                    if (v.y <= 0 || v.y + v.size >= arenaH) {
+                        v.dy *= -1;
+                        v.y = Math.max(0, Math.min(v.y, arenaH - v.size));
+                    }
+
+                    // Aplicar posición
+                    v.el.style.left = v.x + 'px';
+                    v.el.style.top = v.y + 'px';
+                });
+
+                animationId = requestAnimationFrame(moveViruses);
+            }
+
+            // Inicializar el juego
+            function initGame() {
+                // Limpiar arena
+                arena.innerHTML = '';
+                virusArray = [];
+                if (animationId) cancelAnimationFrame(animationId);
+
+                // Crear virus iniciales
+                for (let i = 0; i < VIRUS_COUNT; i++) {
+                    const v = createVirus();
+                    virusArray.push(v);
+                }
+
+                // Empezar animación
+                if (animationId) cancelAnimationFrame(animationId);
+                moveViruses();
+
+                // Reiniciar puntuación si se desea, pero mejor mantenerla
+                // score = 0; scoreSpan.textContent = '0'; (Descomentar si quieres resetear al cargar)
+            }
+
+            // Reaccionar a cambios de tamaño de la ventana (para no romper posiciones)
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    // Reubicar virus si salen de la pantalla
+                    const arenaW = arena.clientWidth;
+                    const arenaH = arena.clientHeight;
+                    virusArray.forEach(v => {
+                        if (!v.el || v.el.classList.contains('squished')) return;
+                        v.x = Math.max(0, Math.min(v.x, arenaW - v.size));
+                        v.y = Math.max(0, Math.min(v.y, arenaH - v.size));
+                    });
+                }, 200);
+            });
+
+            // Iniciar cuando el DOM esté listo
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initGame);
+            } else {
+                initGame();
+            }
+
+            // Reiniciar el juego si el usuario hace clic en el fondo del arena (opcional)
+            // arena.addEventListener('click', function(e) {
+            //     if (e.target === arena) {
+            //         // Puedes poner un mensaje o reset
+            //     }
+            // });
+
+        })();
+    </script>
+
+</body>
+</html>
