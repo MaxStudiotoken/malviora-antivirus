@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malviora | Antivirus Gratuito para Android</title>
+    
+    <!-- FAVICON (Icono de la pestaña del navegador) -->
+    <link rel="icon" type="image/png" href="malviora2.png">
+    
     <meta name="description" content="Malviora es un antivirus gratuito para Android que analiza, detecta riesgos y protege tu móvil de forma clara y sencilla.">
     <link rel="canonical" href="https://MaxStudiotoken.github.io/malviora-antivirus/">
     
-    <!-- Fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -31,6 +34,43 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        /* ===== LANGUAGE SWITCHER ===== */
+        .lang-switcher {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.15);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+        }
+        .lang-switcher span {
+            cursor: pointer;
+            font-size: 0.95rem;
+            padding: 4px 12px;
+            border-radius: 30px;
+            transition: 0.3s;
+            color: #88aabb;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .lang-switcher span:hover {
+            background: rgba(0, 255, 136, 0.15);
+            color: #fff;
+        }
+        .lang-switcher span.active {
+            background: #00ff88;
+            color: #0b0e14;
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.3);
+        }
+        .lang-switcher .flag {
+            margin-right: 4px;
         }
 
         /* ===== HERO ===== */
@@ -184,7 +224,6 @@
             transform: scale(1.2);
         }
 
-        /* Efecto al aplastar (lo añade JS) */
         .virus.squished {
             animation: squishAnim 0.3s forwards !important;
         }
@@ -195,7 +234,6 @@
             100% { transform: scale(0) rotate(40deg); opacity: 0; }
         }
 
-        /* Partícula de explosión */
         .splash {
             position: absolute;
             pointer-events: none;
@@ -209,7 +247,6 @@
             100% { transform: scale(2) translateY(-50px); opacity: 0; }
         }
 
-        /* Mensaje de instrucción */
         .game-tip {
             text-align: center;
             margin-top: 15px;
@@ -248,6 +285,101 @@
             text-align: center;
         }
 
+        /* ===== SECCIÓN X FOLLOW ===== */
+        .x-follow {
+            background: linear-gradient(145deg, #000000, #141414);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 28px;
+            padding: 45px 30px;
+            margin: 50px auto 30px;
+            max-width: 1100px;
+            text-align: center;
+            box-shadow: 0 0 60px rgba(0, 255, 136, 0.06);
+        }
+        .x-follow .x-logo {
+            font-size: 60px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 15px;
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+        }
+        .x-follow h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        .x-follow p {
+            color: #b0c0d0;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            max-width: 620px;
+            margin: 0 auto 22px;
+        }
+        .x-handle {
+            display: inline-block;
+            color: #00ff88;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(0, 255, 136, 0.5);
+            padding-bottom: 3px;
+            margin-bottom: 22px;
+            transition: 0.25s;
+        }
+        .x-handle:hover {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+        .x-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .btn-x {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #000000;
+            background: #ffffff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.25s;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-x:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+        }
+        .btn-share-x {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.25s;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-share-x:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.4);
+            border-color: #00ff88;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             margin-top: 70px;
@@ -267,44 +399,69 @@
             .game-header { flex-direction: column; align-items: start; gap: 10px; }
             #virus-arena { height: 300px; }
             .virus { font-size: 36px; }
+            .btn-x, .btn-share-x {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
+            }
+            .x-follow h2 {
+                font-size: 1.5rem;
+            }
+            .lang-switcher span {
+                font-size: 0.8rem;
+                padding: 2px 8px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- ===== LANGUAGE SWITCHER ===== -->
+    <div class="lang-switcher" id="languageSwitcher">
+        <span data-lang="es" class="active"><span class="flag">🇪🇸</span> ES</span>
+        <span data-lang="en"><span class="flag">🇬🇧</span> EN</span>
+        <span data-lang="fr"><span class="flag">🇫🇷</span> FR</span>
+        <span data-lang="it"><span class="flag">🇮🇹</span> IT</span>
+        <span data-lang="zh"><span class="flag">🇨🇳</span> 中文</span>
+        <span data-lang="ru"><span class="flag">🇷🇺</span> RU</span>
+        <span data-lang="de"><span class="flag">🇩🇪</span> DE</span>
+        <span data-lang="pt"><span class="flag">🇧🇷</span> PT</span>
+    </div>
+
     <!-- ====== HERO ====== -->
     <section class="hero">
         <h1>🛡️ Malviora</h1>
-        <p class="sub">Antivirus Gratuito para Android</p>
-        <div class="badge-hero">🔒 Protección sin complicaciones</div>
+        <p class="sub" data-i18n="subtitle">Antivirus Gratuito para Android</p>
+        <div class="badge-hero" data-i18n="badge">🔒 Protección sin complicaciones</div>
     </section>
 
     <div class="container">
 
         <!-- ====== DESCRIPCIÓN ====== -->
-        <h2 class="section-title">📋 ¿Qué es Malviora?</h2>
+        <h2 class="section-title" data-i18n="what_title">📋 ¿Qué es Malviora?</h2>
         <div class="desc-box">
-            <p>
+            <p data-i18n="desc_p1">
                 <strong>Malviora</strong> es una app de seguridad para Android pensada para ayudarte a proteger tu dispositivo de forma clara, rápida y sencilla.
             </p>
-            <p>
+            <p data-i18n="desc_p2">
                 La aplicación reúne funciones de <strong>análisis, supervisión y protección</strong> para que puedas revisar el estado de tu móvil, detectar posibles riesgos y mejorar tu seguridad diaria desde una sola interfaz.
             </p>
-            <p><strong>Con Malviora puedes:</strong></p>
+            <p><strong data-i18n="features_label">Con Malviora puedes:</strong></p>
             <ul>
-                <li>🔍 Analizar el estado general de seguridad del dispositivo</li>
-                <li>⚠️ Detectar posibles riesgos o comportamientos sospechosos</li>
-                <li>🛡️ Mejorar el control sobre la protección de tu móvil</li>
-                <li>📊 Revisar información útil del sistema y del funcionamiento de la app</li>
-                <li>✨ Disfrutar de una experiencia simple, rápida y fácil de usar</li>
+                <li data-i18n="li1">🔍 Analizar el estado general de seguridad del dispositivo</li>
+                <li data-i18n="li2">⚠️ Detectar posibles riesgos o comportamientos sospechosos</li>
+                <li data-i18n="li3">🛡️ Mejorar el control sobre la protección de tu móvil</li>
+                <li data-i18n="li4">📊 Revisar información útil del sistema y del funcionamiento de la app</li>
+                <li data-i18n="li5">✨ Disfrutar de una experiencia simple, rápida y fácil de usar</li>
             </ul>
-            <p style="margin-top: 20px;">
+            <p style="margin-top: 20px;" data-i18n="desc_p3">
                 Malviora está diseñada para ofrecer una experiencia moderna y accesible, tanto para usuarios que quieren revisar su móvil de forma básica como para quienes desean tener más control sobre la seguridad de su dispositivo.
             </p>
-            <p style="color: #00ff88; font-weight: 700; font-size: 1.2rem;">
+            <p style="color: #00ff88; font-weight: 700; font-size: 1.2rem;" data-i18n="desc_p4">
                 Nuestro objetivo es que la seguridad sea más visual, más cómoda y más fácil de entender.
             </p>
-            <p style="border-top: 1px solid #1e2d34; padding-top: 20px; margin-top: 20px;">
+            <p style="border-top: 1px solid #1e2d34; padding-top: 20px; margin-top: 20px;" data-i18n="desc_p5">
                 <strong>Malviora - Antivirus Android</strong> te ayuda a mantener tu dispositivo más controlado, más protegido y mejor preparado frente a riesgos comunes.
             </p>
         </div>
@@ -312,31 +469,46 @@
         <!-- ====== MINIJUEGO: CAZA VIRUS ====== -->
         <div class="game-section">
             <div class="game-header">
-                <h2>🎯 Modo Caza Virus</h2>
-                <div class="score-box">🧹 Eliminados: <span id="scoreCounter">0</span></div>
+                <h2 data-i18n="game_title">🎯 Modo Caza Virus</h2>
+                <div class="score-box"><span data-i18n="game_score_label">🧹 Eliminados:</span> <span id="scoreCounter">0</span></div>
             </div>
 
             <div id="virus-arena">
                 <!-- Los virus se crean aquí con JavaScript -->
             </div>
-            <p class="game-tip">
-                💡 Haz clic en los <strong>virus (🦠)</strong> para aplastarlos y proteger tu dispositivo. 
-                ¡Cuantos más caces, más seguro estarás!
+            <p class="game-tip" data-i18n="game_tip">
+                💡 Haz clic en los <strong>virus (🦠)</strong> para aplastarlos y proteger tu dispositivo. ¡Cuantos más caces, más seguro estarás!
             </p>
         </div>
 
         <!-- ====== BOTÓN DE DESCARGA ====== -->
         <div class="center">
-            <a href="https://play.google.com/store/apps/details?id=vargas.maximo.malviora" target="_blank" class="download-btn">
+            <a href="https://play.google.com/store/apps/details?id=vargas.maximo.malviora" target="_blank" class="download-btn" data-i18n="download_btn">
                 📲 Descargar Malviora en Google Play
             </a>
         </div>
 
         <!-- ====== CITA ====== -->
         <div style="margin-top: 40px; padding: 20px; background: #0f171c; border-radius: 15px; border-left: 5px solid #00ff88;">
-            <p style="font-style: italic; color: #b0c4d0;">
+            <p style="font-style: italic; color: #b0c4d0;" data-i18n="quote_text">
                 "La seguridad no debería ser un lujo. Por eso Malviora es totalmente gratuita y fácil de usar para todos."
             </p>
+        </div>
+
+        <!-- ====== SECCIÓN X FOLLOW ====== -->
+        <div class="x-follow">
+            <div class="x-logo">𝕏</div>
+            <h2 data-i18n="x_title">Síguenos en X</h2>
+            <p data-i18n="x_text">No te pierdas las últimas noticias, actualizaciones y novedades de Malviora. Sigue a MaxStudio en X para estar al día.</p>
+            <a href="https://x.com/hellofiti" target="_blank" rel="noopener noreferrer" class="x-handle">@hellofiti</a>
+            <div class="x-buttons">
+                <a href="https://x.com/hellofiti" target="_blank" rel="noopener noreferrer" class="btn-x">
+                    𝕏 <span data-i18n="x_follow_btn">Seguir a MaxStudio en X</span>
+                </a>
+                <button class="btn-share-x" onclick="shareOnX()">
+                    𝕏 <span data-i18n="x_share_btn">Compartir esta página en X</span>
+                </button>
+            </div>
         </div>
 
     </div>
@@ -344,37 +516,303 @@
     <!-- ====== FOOTER ====== -->
     <footer>
         <div class="container">
-            <p>© 2026 <strong style="color:#00ff88;">Malviora</strong> · Antivirus para Android</p>
-            <p style="margin-top: 8px; font-size: 0.9rem;">
+            <p data-i18n="footer_copy">© 2026 <strong style="color:#00ff88;">Malviora</strong> · Antivirus para Android</p>
+            <p style="margin-top: 8px; font-size: 0.9rem;" data-i18n="footer_made">
                 Hecho con ❤️ por <a href="https://MaxStudiotoken.github.io/maxstudio/">MaxStudio</a>
             </p>
         </div>
     </footer>
 
-    <!-- ====== JAVASCRIPT: ANIMACIÓN DE VIRUS ====== -->
+    <!-- ====== JAVASCRIPT ====== -->
     <script>
+        // ==================== TRADUCCIONES ====================
+        const translations = {
+            es: {
+                subtitle: "Antivirus Gratuito para Android",
+                badge: "🔒 Protección sin complicaciones",
+                what_title: "📋 ¿Qué es Malviora?",
+                desc_p1: "<strong>Malviora</strong> es una app de seguridad para Android pensada para ayudarte a proteger tu dispositivo de forma clara, rápida y sencilla.",
+                desc_p2: "La aplicación reúne funciones de <strong>análisis, supervisión y protección</strong> para que puedas revisar el estado de tu móvil, detectar posibles riesgos y mejorar tu seguridad diaria desde una sola interfaz.",
+                features_label: "Con Malviora puedes:",
+                li1: "🔍 Analizar el estado general de seguridad del dispositivo",
+                li2: "⚠️ Detectar posibles riesgos o comportamientos sospechosos",
+                li3: "🛡️ Mejorar el control sobre la protección de tu móvil",
+                li4: "📊 Revisar información útil del sistema y del funcionamiento de la app",
+                li5: "✨ Disfrutar de una experiencia simple, rápida y fácil de usar",
+                desc_p3: "Malviora está diseñada para ofrecer una experiencia moderna y accesible, tanto para usuarios que quieren revisar su móvil de forma básica como para quienes desean tener más control sobre la seguridad de su dispositivo.",
+                desc_p4: "Nuestro objetivo es que la seguridad sea más visual, más cómoda y más fácil de entender.",
+                desc_p5: "<strong>Malviora - Antivirus Android</strong> te ayuda a mantener tu dispositivo más controlado, más protegido y mejor preparado frente a riesgos comunes.",
+                game_title: "🎯 Modo Caza Virus",
+                game_score_label: "🧹 Eliminados:",
+                game_tip: "💡 Haz clic en los <strong>virus (🦠)</strong> para aplastarlos y proteger tu dispositivo. ¡Cuantos más caces, más seguro estarás!",
+                download_btn: "📲 Descargar Malviora en Google Play",
+                quote_text: '"La seguridad no debería ser un lujo. Por eso Malviora es totalmente gratuita y fácil de usar para todos."',
+                footer_copy: "© 2026 <strong style='color:#00ff88;'>Malviora</strong> · Antivirus para Android",
+                footer_made: "Hecho con ❤️ por <a href='https://MaxStudiotoken.github.io/maxstudio/'>MaxStudio</a>",
+                x_title: "Síguenos en X",
+                x_text: "No te pierdas las últimas noticias, actualizaciones y novedades de Malviora. Sigue a MaxStudio en X para estar al día.",
+                x_follow_btn: "Seguir a MaxStudio en X",
+                x_share_btn: "Compartir esta página en X",
+                x_share_text: "¡Descubre Malviora! El antivirus gratuito para Android que protege tu móvil de forma clara y sencilla. 🛡️📱"
+            },
+            en: {
+                subtitle: "Free Antivirus for Android",
+                badge: "🔒 Protection without complications",
+                what_title: "📋 What is Malviora?",
+                desc_p1: "<strong>Malviora</strong> is a security app for Android designed to help you protect your device clearly, quickly, and easily.",
+                desc_p2: "The app brings together <strong>analysis, monitoring, and protection</strong> features so you can check your phone's status, detect potential risks, and improve your daily security from a single interface.",
+                features_label: "With Malviora you can:",
+                li1: "🔍 Analyze the general security status of the device",
+                li2: "⚠️ Detect potential risks or suspicious behavior",
+                li3: "🛡️ Improve control over your phone's protection",
+                li4: "📊 Review useful system and app performance information",
+                li5: "✨ Enjoy a simple, fast, and easy-to-use experience",
+                desc_p3: "Malviora is designed to offer a modern and accessible experience, both for users who want to check their phone in a basic way and for those who want more control over the security of their device.",
+                desc_p4: "Our goal is to make security more visual, more comfortable, and easier to understand.",
+                desc_p5: "<strong>Malviora - Android Antivirus</strong> helps you keep your device more controlled, more protected, and better prepared against common risks.",
+                game_title: "🎯 Virus Hunt Mode",
+                game_score_label: "🧹 Eliminated:",
+                game_tip: "💡 Click on the <strong>viruses (🦠)</strong> to squash them and protect your device. The more you hunt, the safer you'll be!",
+                download_btn: "📲 Download Malviora on Google Play",
+                quote_text: '"Security shouldn\'t be a luxury. That\'s why Malviora is completely free and easy to use for everyone."',
+                footer_copy: "© 2026 <strong style='color:#00ff88;'>Malviora</strong> · Antivirus for Android",
+                footer_made: "Made with ❤️ by <a href='https://MaxStudiotoken.github.io/maxstudio/'>MaxStudio</a>",
+                x_title: "Follow us on X",
+                x_text: "Don't miss the latest news, updates and novelties from Malviora. Follow MaxStudio on X to stay up to date.",
+                x_follow_btn: "Follow MaxStudio on X",
+                x_share_btn: "Share this page on X",
+                x_share_text: "Check out Malviora! The free antivirus for Android that protects your phone clearly and easily. 🛡️📱"
+            },
+            fr: {
+                subtitle: "Antivirus Gratuit pour Android",
+                badge: "🔒 Protection sans complications",
+                what_title: "📋 Qu'est-ce que Malviora ?",
+                desc_p1: "<strong>Malviora</strong> est une application de sécurité pour Android conçue pour vous aider à protéger votre appareil de manière claire, rapide et simple.",
+                desc_p2: "L'application regroupe des fonctions d'<strong>analyse, de surveillance et de protection</strong> afin que vous puissiez vérifier l'état de votre téléphone, détecter les risques potentiels et améliorer votre sécurité quotidienne depuis une seule interface.",
+                features_label: "Avec Malviora, vous pouvez :",
+                li1: "🔍 Analyser l'état général de sécurité de l'appareil",
+                li2: "⚠️ Détecter les risques potentiels ou les comportements suspects",
+                li3: "🛡️ Améliorer le contrôle de la protection de votre téléphone",
+                li4: "📊 Consulter des informations utiles sur le système et les performances de l'application",
+                li5: "✨ Profiter d'une expérience simple, rapide et facile à utiliser",
+                desc_p3: "Malviora est conçue pour offrir une expérience moderne et accessible, tant pour les utilisateurs qui souhaitent vérifier leur téléphone de manière basique que pour ceux qui veulent plus de contrôle sur la sécurité de leur appareil.",
+                desc_p4: "Notre objectif est de rendre la sécurité plus visuelle, plus confortable et plus facile à comprendre.",
+                desc_p5: "<strong>Malviora - Antivirus Android</strong> vous aide à garder votre appareil plus contrôlé, plus protégé et mieux préparé face aux risques courants.",
+                game_title: "🎯 Mode Chasse aux Virus",
+                game_score_label: "🧹 Éliminés :",
+                game_tip: "💡 Cliquez sur les <strong>virus (🦠)</strong> pour les écraser et protéger votre appareil. Plus vous en chassez, plus vous serez en sécurité !",
+                download_btn: "📲 Télécharger Malviora sur Google Play",
+                quote_text: '"La sécurité ne devrait pas être un luxe. C\'est pourquoi Malviora est entièrement gratuit et facile à utiliser pour tous."',
+                footer_copy: "© 2026 <strong style='color:#00ff88;'>Malviora</strong> · Antivirus pour Android",
+                footer_made: "Fait avec ❤️ par <a href='https://MaxStudiotoken.github.io/maxstudio/'>MaxStudio</a>",
+                x_title: "Suivez-nous sur X",
+                x_text: "Ne manquez pas les dernières nouvelles, mises à jour et nouveautés de Malviora. Suivez MaxStudio sur X pour rester informé.",
+                x_follow_btn: "Suivre MaxStudio sur X",
+                x_share_btn: "Partager cette page sur X",
+                x_share_text: "Découvrez Malviora ! L'antivirus gratuit pour Android qui protège votre téléphone de manière claire et simple. 🛡️📱"
+            },
+            it: {
+                subtitle: "Antivirus Gratuito per Android",
+                badge: "🔒 Protezione senza complicazioni",
+                what_title: "📋 Cos'è Malviora?",
+                desc_p1: "<strong>Malviora</strong> è un'app di sicurezza per Android progettata per aiutarti a proteggere il tuo dispositivo in modo chiaro, rapido e semplice.",
+                desc_p2: "L'app riunisce funzioni di <strong>analisi, monitoraggio e protezione</strong> per permetterti di controllare lo stato del tuo telefono, rilevare potenziali rischi e migliorare la tua sicurezza quotidiana da un'unica interfaccia.",
+                features_label: "Con Malviora puoi:",
+                li1: "🔍 Analizzare lo stato generale di sicurezza del dispositivo",
+                li2: "⚠️ Rilevare potenziali rischi o comportamenti sospetti",
+                li3: "🛡️ Migliorare il controllo sulla protezione del tuo telefono",
+                li4: "📊 Rivedere informazioni utili sul sistema e sulle prestazioni dell'app",
+                li5: "✨ Goderti un'esperienza semplice, veloce e facile da usare",
+                desc_p3: "Malviora è progettata per offrire un'esperienza moderna e accessibile, sia per gli utenti che vogliono controllare il proprio telefono in modo basilare, sia per chi desidera avere più controllo sulla sicurezza del proprio dispositivo.",
+                desc_p4: "Il nostro obiettivo è rendere la sicurezza più visiva, più comoda e più facile da capire.",
+                desc_p5: "<strong>Malviora - Antivirus Android</strong> ti aiuta a mantenere il tuo dispositivo più controllato, più protetto e meglio preparato contro i rischi comuni.",
+                game_title: "🎯 Modalità Caccia ai Virus",
+                game_score_label: "🧹 Eliminati:",
+                game_tip: "💡 Clicca sui <strong>virus (🦠)</strong> per schiacciarli e proteggere il tuo dispositivo. Più ne cacci, più sarai al sicuro!",
+                download_btn: "📲 Scarica Malviora su Google Play",
+                quote_text: '"La sicurezza non dovrebbe essere un lusso. Ecco perché Malviora è completamente gratuito e facile da usare per tutti."',
+                footer_copy: "© 2026 <strong style='color:#00ff88;'>Malviora</strong> · Antivirus per Android",
+                footer_made: "Fatto con ❤️ da <a href='https://MaxStudiotoken.github.io/maxstudio/'>MaxStudio</a>",
+                x_title: "Seguici su X",
+                x_text: "Non perderti le ultime notizie, aggiornamenti e novità di Malviora. Segui MaxStudio su X per rimanere aggiornato.",
+                x_follow_btn: "Segui MaxStudio su X",
+                x_share_btn: "Condividi questa pagina su X",
+                x_share_text: "Scopri Malviora! L'antivirus gratuito per Android che protegge il tuo telefono in modo chiaro e semplice. 🛡️📱"
+            },
+            zh: {
+                subtitle: "安卓免费杀毒软件",
+                badge: "🔒 无复杂操作的防护",
+                what_title: "📋 什么是 Malviora？",
+                desc_p1: "<strong>Malviora</strong> 是一款安卓安全应用，旨在帮助您清晰、快速、简单地保护您的设备。",
+                desc_p2: "该应用汇集了<strong>分析、监控和保护</strong>功能，让您可以从一个界面查看手机状态、检测潜在风险并提高日常安全性。",
+                features_label: "使用 Malviora，您可以：",
+                li1: "🔍 分析设备的一般安全状态",
+                li2: "⚠️ 检测潜在风险或可疑行为",
+                li3: "🛡️ 提高对手机保护的控制",
+                li4: "📊 查看有用的系统和应用性能信息",
+                li5: "✨ 享受简单、快速、易用的体验",
+                desc_p3: "Malviora 旨在提供现代且易于访问的体验，无论您是希望以基本方式检查手机的用户，还是希望对设备安全有更多控制权的用户。",
+                desc_p4: "我们的目标是让安全更直观、更舒适、更容易理解。",
+                desc_p5: "<strong>Malviora - 安卓杀毒软件</strong> 帮助您让设备更受控、更受保护，并更好地应对常见风险。",
+                game_title: "🎯 病毒猎杀模式",
+                game_score_label: "🧹 已消灭：",
+                game_tip: "💡 点击<strong>病毒（🦠）</strong>将其压扁并保护您的设备。猎杀得越多，您就越安全！",
+                download_btn: "📲 在 Google Play 下载 Malviora",
+                quote_text: '"安全不应是奢侈品。这就是为什么 Malviora 对所有人完全免费且易于使用。"',
+                footer_copy: "© 2026 <strong style='color:#00ff88;'>Malviora</strong> · 安卓杀毒软件",
+                footer_made: "用心制作 ❤️ 来自 <a href='https://MaxStudiotoken.github.io/maxstudio/'>MaxStudio</a>",
+                x_title: "在 X 上关注我们",
+                x_text: "不要错过 Malviora 的最新消息、更新和动态。在 X 上关注 MaxStudio，随时了解最新动态。",
+                x_follow_btn: "在 X 上关注 MaxStudio",
+                x_share_btn: "在 X 上分享此页面",
+                x_share_text: "快来看看 Malviora！这款免费的安卓杀毒软件能清晰、轻松地保护您的手机。🛡️📱"
+            },
+            ru: {
+                subtitle: "Бесплатный антивирус для Android",
+                badge: "🔒 Защита без сложностей",
+                what_title: "📋 Что такое Malviora?",
+                desc_p1: "<strong>Malviora</strong> — это приложение безопасности для Android, созданное, чтобы помочь вам защитить ваше устройство ясно, быстро и просто.",
+                desc_p2: "Приложение объединяет функции <strong>анализа, мониторинга и защиты</strong>, чтобы вы могли проверить состояние телефона, обнаружить潜在ные риски и повысить повседневную безопасность из одного интерфейса.",
+                features_label: "С Malviora вы можете:",
+                li1: "🔍 Анализировать общее состояние безопасности устройства",
+                li2: "⚠️ Обнаруживать потенциальные риски или подозрительное поведение",
+                li3: "🛡️ Улучшить контроль над защитой телефона",
+                li4: "📊 Просматривать полезную информацию о системе и работе приложения",
+                li5: "✨ Наслаждаться простым, быстрым и удобным опытом",
+                desc_p3: "Malviora создана для обеспечения современного и доступного опыта как для пользователей, которые хотят проверить телефон базово, так и для тех, кто хочет больше контроля над безопасностью устройства.",
+                desc_p4: "Наша цель — сделать безопасность более наглядной, удобной и понятной.",
+                desc_p5: "<strong>Malviora - Антивирус для Android</strong> помогает держать устройство под контролем, более защищённым и лучше подготовленным к распространённым рискам.",
+                game_title: "🎯 Режим охоты на вирусы",
+                game_score_label: "🧹 Уничтожено:",
+                game_tip: "💡 Нажимайте на <strong>вирусы (🦠)</strong>, чтобы раздавить их и защитить устройство. Чем больше вы охотитесь, тем безопаснее!",
+                download_btn: "📲 Скачать Malviora в Google Play",
+                quote_text: '"Безопасность не должна быть роскошью. Поэтому Malviora полностью бесплатна и проста в использовании для всех."',
+                footer_copy: "© 2026 <strong style='color:#00ff88;'>Malviora</strong> · Антивирус для Android",
+                footer_made: "Сделано с ❤️ от <a href='https://MaxStudiotoken.github.io/maxstudio/'>MaxStudio</a>",
+                x_title: "Подписывайтесь на X",
+                x_text: "Не пропустите последние новости, обновления и новинки Malviora. Подписывайтесь на MaxStudio в X, чтобы быть в курсе.",
+                x_follow_btn: "Подписаться на MaxStudio в X",
+                x_share_btn: "Поделиться этой страницей в X",
+                x_share_text: "Посмотрите Malviora! Бесплатный антивирус для Android, который ясно и легко защищает ваш телефон. 🛡️📱"
+            },
+            de: {
+                subtitle: "Kostenloser Antivirus für Android",
+                badge: "🔒 Schutz ohne Komplikationen",
+                what_title: "📋 Was ist Malviora?",
+                desc_p1: "<strong>Malviora</strong> ist eine Sicherheits-App für Android, die Ihnen hilft, Ihr Gerät klar, schnell und einfach zu schützen.",
+                desc_p2: "Die App vereint <strong>Analyse-, Überwachungs- und Schutzfunktionen</strong>, damit Sie den Status Ihres Telefons überprüfen, potenzielle Risiken erkennen und Ihre tägliche Sicherheit über eine einzige Oberfläche verbessern können.",
+                features_label: "Mit Malviora können Sie:",
+                li1: "🔍 Den allgemeinen Sicherheitsstatus des Geräts analysieren",
+                li2: "⚠️ Potenzielle Risiken oder verdächtiges Verhalten erkennen",
+                li3: "🛡️ Die Kontrolle über den Schutz Ihres Telefons verbessern",
+                li4: "📊 Nützliche System- und App-Leistungsinformationen einsehen",
+                li5: "✨ Ein einfaches, schnelles und benutzerfreundliches Erlebnis genießen",
+                desc_p3: "Malviora wurde entwickelt, um ein modernes und zugängliches Erlebnis zu bieten, sowohl für Benutzer, die ihr Telefon grundlegend überprüfen möchten, als auch für diejenigen, die mehr Kontrolle über die Sicherheit ihres Geräts wünschen.",
+                desc_p4: "Unser Ziel ist es, Sicherheit visueller, komfortabler und verständlicher zu machen.",
+                desc_p5: "<strong>Malviora - Android Antivirus</strong> hilft Ihnen, Ihr Gerät kontrollierter, geschützter und besser auf gängige Risiken vorbereitet zu halten.",
+                game_title: "🎯 Virus-Jagdmodus",
+                game_score_label: "🧹 Eliminiert:",
+                game_tip: "💡 Klicken Sie auf die <strong>Viren (🦠)</strong>, um sie zu zerquetschen und Ihr Gerät zu schützen. Je mehr Sie jagen, desto sicherer sind Sie!",
+                download_btn: "📲 Malviora bei Google Play herunterladen",
+                quote_text: '"Sicherheit sollte kein Luxus sein. Deshalb ist Malviora für alle völlig kostenlos und einfach zu bedienen."',
+                footer_copy: "© 2026 <strong style='color:#00ff88;'>Malviora</strong> · Antivirus für Android",
+                footer_made: "Mit ❤️ gemacht von <a href='https://MaxStudiotoken.github.io/maxstudio/'>MaxStudio</a>",
+                x_title: "Folge uns auf X",
+                x_text: "Verpasse keine Neuigkeiten, Updates und Neuerungen von Malviora. Folge MaxStudio auf X, um auf dem Laufenden zu bleiben.",
+                x_follow_btn: "MaxStudio auf X folgen",
+                x_share_btn: "Diese Seite auf X teilen",
+                x_share_text: "Entdecke Malviora! Der kostenlose Antivirus für Android, der dein Handy klar und einfach schützt. 🛡️📱"
+            },
+            pt: {
+                subtitle: "Antivírus Gratuito para Android",
+                badge: "🔒 Proteção sem complicações",
+                what_title: "📋 O que é o Malviora?",
+                desc_p1: "<strong>Malviora</strong> é um aplicativo de segurança para Android projetado para ajudá-lo a proteger seu dispositivo de forma clara, rápida e simples.",
+                desc_p2: "O aplicativo reúne funções de <strong>análise, monitoramento e proteção</strong> para que você possa verificar o status do seu celular, detectar possíveis riscos e melhorar sua segurança diária a partir de uma única interface.",
+                features_label: "Com o Malviora você pode:",
+                li1: "🔍 Analisar o estado geral de segurança do dispositivo",
+                li2: "⚠️ Detectar possíveis riscos ou comportamentos suspeitos",
+                li3: "🛡️ Melhorar o controle sobre a proteção do seu celular",
+                li4: "📊 Revisar informações úteis do sistema e do desempenho do aplicativo",
+                li5: "✨ Desfrutar de uma experiência simples, rápida e fácil de usar",
+                desc_p3: "Malviora foi projetado para oferecer uma experiência moderna e acessível, tanto para usuários que desejam verificar seu celular de forma básica quanto para aqueles que desejam mais controle sobre a segurança do dispositivo.",
+                desc_p4: "Nosso objetivo é tornar a segurança mais visual, mais confortável e mais fácil de entender.",
+                desc_p5: "<strong>Malviora - Antivírus Android</strong> ajuda você a manter seu dispositivo mais controlado, mais protegido e melhor preparado contra riscos comuns.",
+                game_title: "🎯 Modo Caça ao Vírus",
+                game_score_label: "🧹 Eliminados:",
+                game_tip: "💡 Clique nos <strong>vírus (🦠)</strong> para esmagá-los e proteger seu dispositivo. Quanto mais você caçar, mais seguro estará!",
+                download_btn: "📲 Baixar Malviora no Google Play",
+                quote_text: '"Segurança não deveria ser um luxo. É por isso que o Malviora é totalmente gratuito e fácil de usar para todos."',
+                footer_copy: "© 2026 <strong style='color:#00ff88;'>Malviora</strong> · Antivírus para Android",
+                footer_made: "Feito com ❤️ por <a href='https://MaxStudiotoken.github.io/maxstudio/'>MaxStudio</a>",
+                x_title: "Siga-nos no X",
+                x_text: "Não perca as últimas notícias, atualizações e novidades do Malviora. Siga a MaxStudio no X para ficar por dentro.",
+                x_follow_btn: "Seguir a MaxStudio no X",
+                x_share_btn: "Compartilhar esta página no X",
+                x_share_text: "Confira o Malviora! O antivírus gratuito para Android que protege seu celular de forma clara e simples. 🛡️📱"
+            }
+        };
+
+        // ==================== IDIOMA ====================
+        const langSwitcher = document.getElementById('languageSwitcher');
+        const allLangSpans = langSwitcher.querySelectorAll('span');
+        const i18nElements = document.querySelectorAll('[data-i18n]');
+
+        function setLanguage(lang) {
+            allLangSpans.forEach(span => {
+                span.classList.remove('active');
+                if (span.dataset.lang === lang) span.classList.add('active');
+            });
+            i18nElements.forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key] !== undefined) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        allLangSpans.forEach(span => {
+            span.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                setLanguage(lang);
+            });
+        });
+
+        // ==================== COMPARTIR EN X ====================
+        function shareOnX() {
+            const lang = document.documentElement.lang || 'es';
+            const text = translations[lang]?.x_share_text || translations.es.x_share_text;
+            const url = window.location.href;
+            const shareUrl = "https://twitter.com/intent/tweet?text="
+                + encodeURIComponent(text)
+                + "&url="
+                + encodeURIComponent(url)
+                + "&via=hellofiti";
+            window.open(shareUrl, "_blank", "width=600,height=500");
+        }
+
+        // ==================== JUEGO CAZA VIRUS ====================
         (function() {
             const arena = document.getElementById('virus-arena');
             const scoreSpan = document.getElementById('scoreCounter');
             let score = 0;
             let virusArray = [];
             let animationId = null;
-            const VIRUS_COUNT = 12; // Número de virus caminando
+            const VIRUS_COUNT = 12;
 
-            // Emojis de virus
             const virusEmojis = ['🦠', '🧫', '☣️', '🦟', '🧬'];
 
-            // Crear un virus
             function createVirus() {
                 const el = document.createElement('div');
                 el.className = 'virus';
                 el.textContent = virusEmojis[Math.floor(Math.random() * virusEmojis.length)];
                 
-                const size = 40 + Math.random() * 30; // 40-70px
+                const size = 40 + Math.random() * 30;
                 const x = Math.random() * (arena.clientWidth - size);
                 const y = Math.random() * (arena.clientHeight - size);
-                const dx = (Math.random() - 0.5) * 4; // velocidad X
-                const dy = (Math.random() - 0.5) * 4; // velocidad Y
+                const dx = (Math.random() - 0.5) * 4;
+                const dy = (Math.random() - 0.5) * 4;
 
                 el.style.fontSize = size + 'px';
                 el.style.left = x + 'px';
@@ -387,7 +825,6 @@
 
                 arena.appendChild(el);
 
-                // Evento de clic para aplastar
                 el.addEventListener('click', function(e) {
                     e.stopPropagation();
                     squishVirus(el);
@@ -404,14 +841,10 @@
                 };
             }
 
-            // Función para aplastar virus
             function squishVirus(el) {
-                if (el.classList.contains('squished')) return; // Ya aplastado
-
-                // Añadir clase de aplastado
+                if (el.classList.contains('squished')) return;
                 el.classList.add('squished');
 
-                // Crear efecto de explosión (splash)
                 const rect = el.getBoundingClientRect();
                 const arenaRect = arena.getBoundingClientRect();
                 const centerX = rect.left - arenaRect.left + rect.width / 2;
@@ -425,36 +858,27 @@
                 splash.style.fontSize = '40px';
                 arena.appendChild(splash);
 
-                // Eliminar el splash después de la animación
                 setTimeout(() => {
                     splash.remove();
                 }, 700);
 
-                // Incrementar puntuación
                 score++;
                 scoreSpan.textContent = score;
 
-                // Eliminar el virus del DOM y del array después de la animación
                 setTimeout(() => {
                     if (el.parentNode) {
                         el.remove();
                     }
-                    // Reemplazar con un virus nuevo para mantener la dificultad
                     spawnNewVirus();
                 }, 350);
             }
 
-            // Spawnear un virus nuevo
             function spawnNewVirus() {
                 const newV = createVirus();
-                // Reemplazar en el array el que murió (buscar un slot muerto)
-                // Como es más fácil, lo añadimos y si hay muchos, quitamos los muertos.
                 virusArray.push(newV);
-                // Limpiar virus muertos del array (los que no tienen elemento padre o están squished)
                 virusArray = virusArray.filter(v => v.el.parentNode !== null && !v.el.classList.contains('squished'));
             }
 
-            // Mover virus (física de rebote)
             function moveViruses() {
                 const arenaW = arena.clientWidth;
                 const arenaH = arena.clientHeight;
@@ -465,7 +889,6 @@
                     v.x += v.dx;
                     v.y += v.dy;
 
-                    // Rebote en bordes
                     if (v.x <= 0 || v.x + v.size >= arenaW) {
                         v.dx *= -1;
                         v.x = Math.max(0, Math.min(v.x, arenaW - v.size));
@@ -475,7 +898,6 @@
                         v.y = Math.max(0, Math.min(v.y, arenaH - v.size));
                     }
 
-                    // Aplicar posición
                     v.el.style.left = v.x + 'px';
                     v.el.style.top = v.y + 'px';
                 });
@@ -483,33 +905,24 @@
                 animationId = requestAnimationFrame(moveViruses);
             }
 
-            // Inicializar el juego
             function initGame() {
-                // Limpiar arena
                 arena.innerHTML = '';
                 virusArray = [];
                 if (animationId) cancelAnimationFrame(animationId);
 
-                // Crear virus iniciales
                 for (let i = 0; i < VIRUS_COUNT; i++) {
                     const v = createVirus();
                     virusArray.push(v);
                 }
 
-                // Empezar animación
                 if (animationId) cancelAnimationFrame(animationId);
                 moveViruses();
-
-                // Reiniciar puntuación si se desea, pero mejor mantenerla
-                // score = 0; scoreSpan.textContent = '0'; (Descomentar si quieres resetear al cargar)
             }
 
-            // Reaccionar a cambios de tamaño de la ventana (para no romper posiciones)
             let resizeTimeout;
             window.addEventListener('resize', () => {
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(() => {
-                    // Reubicar virus si salen de la pantalla
                     const arenaW = arena.clientWidth;
                     const arenaH = arena.clientHeight;
                     virusArray.forEach(v => {
@@ -520,21 +933,16 @@
                 }, 200);
             });
 
-            // Iniciar cuando el DOM esté listo
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', initGame);
             } else {
                 initGame();
             }
 
-            // Reiniciar el juego si el usuario hace clic en el fondo del arena (opcional)
-            // arena.addEventListener('click', function(e) {
-            //     if (e.target === arena) {
-            //         // Puedes poner un mensaje o reset
-            //     }
-            // });
-
         })();
+
+        // ==================== IDIOMA INICIAL ====================
+        setLanguage('es');
     </script>
 
 </body>
